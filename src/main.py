@@ -1,8 +1,5 @@
 # To add a new cell, type '# %%'
 # To add a new markdown cell, type '# %% [markdown]'
-# %%
-from IPython import get_ipython
-
 # %% [markdown]
 # # Main
 
@@ -11,23 +8,11 @@ import requests
 import json
 from bs4 import BeautifulSoup
 import os
-get_ipython().run_line_magic('load_ext', 'dotenv')
-get_ipython().run_line_magic('dotenv', '')
+from dotenv import dotenv_values
 
 
 # %%
-def push(title, msg):
-    payload = {
-        "token": os.getenv("PUSH_TOKEN"),
-        "user": os.getenv("PUSH_USER"),
-        "title": title,
-        "message": msg
-    }
-
-    requests.post('https://api.pushover.net/1/messages.json', data=payload)
-
-
-# %%
+config = dotenv_values("../.env")
 CASTLES = {
     'Neuschwanstein': {
         'name': 'Neuschwanstein',
@@ -43,13 +28,6 @@ CASTLES = {
         "PersonSelection": [{"nPersonTypeNr":"29","nCount":"1"},{"nPersonTypeNr":"33","nCount":"0"},{"nPersonTypeNr":"34","nCount":"0"},{"nPersonTypeNr":"63","nCount":"0"}],
     }
 }
-
-
-# %%
-check_for_free_tickets("08.08.2021", CASTLES['Hohenschwangnau'])
-check_for_free_tickets("09.08.2021", CASTLES['Hohenschwangnau'])
-check_for_free_tickets("08.08.2021", CASTLES['Neuschwanstein'])
-check_for_free_tickets("09.08.2021", CASTLES['Neuschwanstein'])
 
 
 # %%
@@ -103,11 +81,22 @@ def check_for_free_tickets(dtSelectedDate, castle):
 
 
 # %%
+def push(title, msg):
+    payload = {
+        "token": config["PUSH_TOKEN"],
+        "user": config["PUSH_USER"],
+        "title": title,
+        "message": msg
+    }
 
+    requests.post('https://api.pushover.net/1/messages.json', data=payload)
 
 
 # %%
-
+check_for_free_tickets("08.10.2021", CASTLES['Hohenschwangnau'])
+check_for_free_tickets("09.08.2021", CASTLES['Hohenschwangnau'])
+check_for_free_tickets("08.08.2021", CASTLES['Neuschwanstein'])
+check_for_free_tickets("09.08.2021", CASTLES['Neuschwanstein'])
 
 
 # %%
