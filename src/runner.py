@@ -78,4 +78,4 @@ def check_for_free_tickets(dtSelectedDate, noOfTickets, castle, notify):
             print(i.text)
             l = l + i.text + '\n'
 
-        notify(castle['name'], l)
+        notify("%s (%s)" % (castle['name'], dtSelectedDate), l)
