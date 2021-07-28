@@ -93,7 +93,7 @@ def push(title, msg):
 
 
 # %%
-check_for_free_tickets("08.10.2021", CASTLES['Hohenschwangnau'])
+check_for_free_tickets("08.08.2021", CASTLES['Hohenschwangnau'])
 check_for_free_tickets("09.08.2021", CASTLES['Hohenschwangnau'])
 check_for_free_tickets("08.08.2021", CASTLES['Neuschwanstein'])
 check_for_free_tickets("09.08.2021", CASTLES['Neuschwanstein'])
