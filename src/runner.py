@@ -36,7 +36,7 @@ def push(title, msg):
 
     requests.post('https://api.pushover.net/1/messages.json', data=payload)
 
-def check_for_free_tickets(dtSelectedDate, castle, notify):
+def check_for_free_tickets(dtSelectedDate, noOfTickets, castle, notify):
     print("%s - %s" % (castle['name'], dtSelectedDate))
     params = {
         "PersonSelection": castle['PersonSelection'],
@@ -45,7 +45,7 @@ def check_for_free_tickets(dtSelectedDate, castle, notify):
         'dtSelectedDate': "%s" % dtSelectedDate,
         'dtStartDate': "%s" % dtSelectedDate,
         'nDays': 0,
-        'nPlaces': 2,
+        'nPlaces': noOfTickets,
         'nPoolNr': "%s" % castle['nPoolNr'],
         'nTicketTypeNr': "%s" % castle['nTicketTypeNr']
     }

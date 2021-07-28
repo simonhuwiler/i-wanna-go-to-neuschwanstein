@@ -7,8 +7,8 @@ def notify(title, text):
 """
 
 # Add your checks
-check_for_free_tickets("08.08.2021", CASTLES['Hohenschwangnau'], push)
-check_for_free_tickets("09.08.2021", CASTLES['Hohenschwangnau'], push)
-check_for_free_tickets("08.08.2021", CASTLES['Neuschwanstein'], push)
-check_for_free_tickets("09.08.2021", CASTLES['Neuschwanstein'], push)
+check_for_free_tickets("08.08.2021", 2, CASTLES['Hohenschwangnau'], push)
+check_for_free_tickets("09.08.2021", 2, CASTLES['Hohenschwangnau'], push)
+check_for_free_tickets("08.08.2021", 2, CASTLES['Neuschwanstein'], push)
+check_for_free_tickets("09.08.2021", 2, CASTLES['Neuschwanstein'], push)
 
