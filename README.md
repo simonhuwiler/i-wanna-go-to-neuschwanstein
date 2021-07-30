@@ -15,7 +15,7 @@ check_for_free_tickets("08.10.2021", 2, CASTLES['Hohenschwangnau'], notify)
 Parameters:
 * `date`: Date of your visit
 * `quantity`: How many tickets?
-* `casle`: Which castle? Use `CASTLES['Neuschwanstein']` or `CASTLES['Hohenschwangnau']`
+* `castle`: Which castle? Use `CASTLES['Neuschwanstein']` or `CASTLES['Hohenschwangnau']`
 * `callback`: Add a Callback Function to get a notification
 
 ### Add Callback function
